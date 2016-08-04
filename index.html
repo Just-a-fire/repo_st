@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Статистика сбора изменений</title>
+</head>
+<!-- основной стиль всех страниц -->
+<link rel="stylesheet" href="css/main.css">
+<!-- стиль формы ввода данных -->
+<link rel="stylesheet" href="css/form.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/form.js"></script>
+<body>
+	<form action="action.php" class="main_form">
+		<header>
+			<h3>Сбор статистики репозитория</h3>
+		</header>
+
+		<fieldset>
+			<legend>Адресс репозитория</legend>
+			<!-- <label for="url">URL:</label> <input type="text" id="url" name="url" value="https://github.com/" data-prefix="https://github.com/"> -->
+			<label for="url">https://github.com/</label> 
+			<input type="text" id="url" name="url" 
+				   title=":owner/:repo/ длина onwer и repo не менее 3" 
+				   autocomplete="off" required 
+				   pattern="(?=.{3,}/.{3,}).{6,}">
+		</fieldset>
+
+		<fieldset>
+			<legend>Период создания коммитов</legend>
+			<label for="start">с</label> <input type="date" name="start" id="start" required>
+			&nbsp;
+			<label for="end">по</label> <input type="date" name="end" id="end" required>
+		</fieldset>
+
+		<fieldset>
+			<legend>Access token</legend>
+			<input type="text" name="access_token" id="access_token" placeholder="Необязательное, но желательное поле">
+		</fieldset>
+		
+		<footer>
+			<input type="submit" value="Вперёд">
+		</footer>		
+	</form>
+
+	<ul id="tool-tip">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+</body>
+</html>

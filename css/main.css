@@ -1,0 +1,14 @@
+body{
+	font:100%/1.2em Arial, Helvetica, sans-serif;  /*100%/1.5em*/
+	/*position:relative;*/
+	min-width:220px;
+	height:100%;
+	color:#000;
+	background:#fff;
+	margin: 0;
+	padding: 0;
+}
+
+:focus {
+	outline: none;
+}
