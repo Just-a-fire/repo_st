@@ -19,8 +19,6 @@ $access_token = isset($_REQUEST['access_token']) && strlen($_REQUEST['access_tok
 	? $_REQUEST['access_token']
 	: '';
 
-// $access_token = '7a0450af06cd2d4942909805084c6b894c44931c'; // TODO: del
-
 if (empty($url)) die('Empty url.');
 ?>
 <!DOCTYPE html>
@@ -60,11 +58,8 @@ $(document).ready(function(){
 <h3>Период с <?=substr($start, 0, 10)?> по <?=substr($end, 0, 10)?> </h3>
 <?php
 $url_trees = GITHUB_API . 'repos/' . $url . 'git/trees/master?recursive=1';
-
 $result = curlGetObj($url_trees, CURL_AGENT, $access_token);
 $obj = json_decode($result, true);
-
-
 
 if (!isset($obj['tree'])) {
 	echo 'Что-то пошло не так ' . $url_trees . '<br>';
